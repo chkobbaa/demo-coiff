@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo Coiff — Premium Barbershop</title>
+  <meta name="description"
+    content="Precision cuts, timeless style. Book your appointment at the finest barbershop in town." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+
+  <!-- INTRO CURTAIN -->
+  <div class="curtain" id="curtain">
+    <div class="panel left"></div>
+    <div class="panel right"></div>
+    <div class="curtain-logo">
+      <svg id="scissors-svg" width="200" height="200" viewBox="0 0 400 400" overflow="visible">
+        <g id="blade-left">
+          <line id="line-left" x1="155" y1="310" x2="200" y2="90" stroke="#c8a45a" stroke-width="9"
+            stroke-linecap="round" />
+          <circle id="handle-left" cx="115" cy="330" r="16" fill="none" stroke="#c8a45a" stroke-width="9" opacity="0" />
+          <circle id="dot-left" cx="115" cy="330" r="4" fill="#c8a45a" opacity="0" />
+        </g>
+        <g id="blade-right">
+          <line id="line-right" x1="200" y1="90" x2="245" y2="310" stroke="#c8a45a" stroke-width="9"
+            stroke-linecap="round" />
+          <circle id="handle-right" cx="285" cy="330" r="16" fill="none" stroke="#c8a45a" stroke-width="9"
+            opacity="0" />
+          <circle id="dot-right" cx="285" cy="330" r="4" fill="#c8a45a" opacity="0" />
+        </g>
+        <circle id="pivot" cx="200" cy="200" r="6" fill="#c8a45a" opacity="0" />
+        <line id="a-crossbar" x1="172" y1="225" x2="228" y2="225" stroke="#c8a45a" stroke-width="9"
+          stroke-linecap="round" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="site-nav" id="site-nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-brand">Demo Coiff</a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#visit">Visit</a>
+        <a href="https://wa.me/21652837191?text=Hello!%20I%20would%20like%20to%20book%20an%20appointment."
+          target="_blank" class="nav-cta">Book Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-grain"></div>
+    <div class="hero-content">
+      <h1>Unlock your style<br>with every cut</h1>
+      <p class="hero-subtitle">Book your appointment, choose your master barber, and experience the timeless craft of
+        precision grooming.</p>
+
+      <div class="hero-buttons">
+        <a href="https://wa.me/21652837191?text=Hello!%20I%20would%20like%20to%20book%20an%20appointment%20with%20you."
+          target="_blank" class="btn-primary" id="book-now-btn">
+          <span>Book Now</span>
+        </a>
+        <a href="#services" class="btn-secondary">
+          <span>Our Services</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION — Horizontal Scroll -->
+  <section class="services" id="services">
+    <div class="services-sticky">
+      <div class="services-header">
+        <span class="section-tag">What We Offer</span>
+        <h2 class="section-title">Our Services</h2>
+      </div>
+      <div class="services-scroll-wrapper">
+        <div class="services-track">
+          <div style="width: 200px;"></div>
+          <div style="width: 200px;"></div>
+          <div style="width: 200px;"></div>
+          <div class="service-card" style="background-image: url('assets/images/classic.png');">
+            <div class="service-card-overlay"></div>
+            <div class="service-card-content">
+              <div class="service-icon">&#9986;</div>
+              <h3>Classic Cut</h3>
+              <p>Timeless precision tailored to your style and face shape.</p>
+              <span class="service-price">$35</span>
+            </div>
+          </div>
+          <div class="service-card" style="background-image: url('assets/images/hot_shave.jpg');">
+            <div class="service-card-overlay"></div>
+            <div class="service-card-content">
+              <div class="service-icon">&#129682;</div>
+              <h3>Hot Shave</h3>
+              <p>Traditional straight-razor shave with hot towel treatment.</p>
+              <span class="service-price">$30</span>
+            </div>
+          </div>
+          <div class="service-card" style="background-image: url('assets/images/beard_sculpt.jpg');">
+            <div class="service-card-overlay"></div>
+            <div class="service-card-content">
+              <div class="service-icon">&#128136;</div>
+              <h3>Beard Sculpt</h3>
+              <p>Expert shaping and grooming for the perfect beard line.</p>
+              <span class="service-price">$25</span>
+            </div>
+          </div>
+          <div class="service-card" style="background-image: url('assets/images/royal.webp');">
+            <div class="service-card-overlay"></div>
+            <div class="service-card-content">
+              <div class="service-icon">&#128081;</div>
+              <h3>Royal Treatment</h3>
+              <p>Full cut, shave, facial massage &amp; premium styling.</p>
+              <span class="service-price">$75</span>
+            </div>
+          </div>
+          <div class="service-card" style="background-image: url('assets/images/hair_design.webp');">
+            <div class="service-card-overlay"></div>
+            <div class="service-card-content">
+              <div class="service-icon">&#10024;</div>
+              <h3>Hair Design</h3>
+              <p>Custom patterns, fades &amp; artistic detail work.</p>
+              <span class="service-price">$50</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about" id="about">
+    <div class="about-sticky">
+      <div class="section-container about-layout">
+        <div class="about-text">
+          <span class="section-tag">Our Story</span>
+          <h2 class="section-title">More Than a Haircut</h2>
+          <p>We believe a great cut is an act of self-expression. Our master barbers blend old-school craft with modern
+            trends to create looks that are uniquely yours.</p>
+          <p>Step into our chair, leave as the best version of yourself.</p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-number" data-count="12">0</span>
+              <span class="stat-label">Years of Craft</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" data-count="8500">0</span>
+              <span class="stat-label">Happy Clients</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" data-count="5">0</span>
+              <span class="stat-label">Expert Barbers</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="carousel-container">
+            <div class="carousel3d">
+              <div class="carousel-item" style="background-image: url('assets/images/img1.jpg'); --deg: 0deg;">
+              </div>
+              <div class="carousel-item" style="background-image: url('assets/images/img2.jpg'); --deg: 72deg;">
+              </div>
+              <div class="carousel-item" style="background-image: url('assets/images/img3.png'); --deg: 144deg;">
+              </div>
+              <div class="carousel-item" style="background-image: url('assets/images/img4.png'); --deg: 216deg;">
+              </div>
+              <div class="carousel-item" style="background-image: url('assets/images/img6.png'); --deg: 288deg;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT US — Sticky Left / Scrolling Right -->
+  <section class="visit" id="visit">
+    <div class="section-container visit-layout">
+      <div class="visit-sticky">
+        <span class="section-tag">Find Us</span>
+        <h2 class="section-title">Visit Our Shop</h2>
+        <div class="visit-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3209.0426120687907!2d10.732830675085621!3d36.45652648699834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130299004f4f43b3%3A0xb8f350e83b565862!2sDemo%20coif!5e0!3m2!1sen!2stn!4v1775780376079!5m2!1sen!2stn"
+            width="100%" height="280" style="border:0; border-radius: 12px; filter: grayscale(0.8) brightness(0.7);"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <div class="visit-address">
+          <p>Nabeul, Bab Salah,
+            Tunisia</p>
+          <a href="https://wa.me/21652837191" class="visit-phone">+216 52 837 191</a>
+        </div>
+      </div>
+      <div class="visit-scroll">
+        <div class="visit-block">
+          <h3>Opening Hours</h3>
+          <div class="hours-list">
+            <div class="hours-row"><span>Monday - Friday</span><span>9:00 AM — 8:00 PM</span></div>
+            <div class="hours-row"><span>Saturday</span><span>8:00 AM — 9:00 PM</span></div>
+            <div class="hours-row"><span>Sunday</span><span>10:00 AM — 6:00 PM</span></div>
+          </div>
+        </div>
+        <div class="visit-block">
+          <h3>What Clients Say</h3>
+          <div class="testimonial">
+            <p>"Best barbershop in the city. Every cut feels like a work of art. I've been coming here for 3 years and
+              never looked back."</p>
+            <span class="testimonial-author">— Marcus J.</span>
+          </div>
+          <div class="testimonial">
+            <p>"The hot shave experience is unreal. You walk out feeling like a new man. Truly the gentleman's
+              experience."</p>
+            <span class="testimonial-author">— David R.</span>
+          </div>
+          <div class="testimonial">
+            <p>"I flew in from NYC and made sure to book an appointment. That's how good they are. Worth every penny."
+            </p>
+            <span class="testimonial-author">— Anthony K.</span>
+          </div>
+        </div>
+        <div class="visit-block visit-cta-block">
+          <h3>Ready for a Fresh Look?</h3>
+          <p>Walk-ins welcome, but we recommend booking ahead for the full experience.</p>
+          <a href="https://wa.me/21652837191?text=Hello!%20I%20would%20like%20to%20book%20an%20appointment."
+            target="_blank" class="visit-cta-btn">Book Your Appointment</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="section-container footer-content">
+      <div class="footer-brand">
+        <span class="footer-logo">&#9986; Demo Coiff</span>
+        <p>Precision. Style. Identity.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#hero">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#visit">Visit</a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Demo Coiff. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
